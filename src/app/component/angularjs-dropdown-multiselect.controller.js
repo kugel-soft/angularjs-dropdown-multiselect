@@ -83,17 +83,17 @@ export default function dropdownMultiselectController(
 	};
 
 	const texts = {
-		checkAll: 'Check All',
-		uncheckAll: 'Uncheck All',
-		selectionCount: 'checked',
+		checkAll: 'Selecionar todos',
+		uncheckAll: 'Deselecionar todos',
+		selectionCount: 'selecionados',
 		selectionOf: '/',
-		searchPlaceholder: 'Search...',
-		buttonDefaultText: 'Select',
-		dynamicButtonTextSuffix: 'checked',
-		disableSearch: 'Disable search',
-		enableSearch: 'Enable search',
-		selectGroup: 'Select all:',
-		allSelectedText: 'All',
+		searchPlaceholder: 'Pesquisar...',
+		buttonDefaultText: 'Selecionar',
+		dynamicButtonTextSuffix: 'selecionados',
+		disableSearch: 'Desabilitar pesquisa',
+		enableSearch: 'Habilitar pesquisa',
+		selectGroup: 'Selecionar todos:',
+		allSelectedText: 'Todos',
 	};
 
 	const input = {

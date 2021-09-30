@@ -12,9 +12,6 @@ export default function dropdownMultiselectDirective() {
 			translationTexts: '=',
 			disabled: '=',
 		},
-		transclude: {
-			toggleDropdown: '?toggleDropdown',
-		},
 		controller,
 		templateUrl: 'app/component/angularjs-dropdown-multiselect.html',
 	};

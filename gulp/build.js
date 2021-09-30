@@ -156,7 +156,7 @@ gulp.task('build.component', ['compile:component'], function () {
 		.pipe(cssFilter)
 		.pipe($.cssnano())
 		.pipe(cssFilter.restore)
-		.pipe(gulp.dest(path.join(conf.paths.dist, '/src')))
+		.pipe(gulp.dest(path.join(conf.paths.dist, '/')))
 		.pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }));
 });
 

@@ -1,6 +1,6 @@
 <div class="multiselect-parent btn-group dropdown-multiselect"
      ng-class="{open: open}">
-     <div ng-transclude="toggleDropdown" ng-click="toggleDropdown()">
+     <div ng-click="toggleDropdown()">
       <button ng-disabled="disabled"
               type="button"
               class="dropdown-toggle"
@@ -17,7 +17,7 @@
          data-ng-click="selectAll()"
          tabindex="-1"
          id="selectAll">
-        <span class="glyphicon glyphicon-ok"></span>
+        <span class="fa fa-check-square-o fa-fw"></span>
         {{texts.checkAll}}
       </a>
     <li ng-if="settings.showUncheckAll">
@@ -25,7 +25,7 @@
          data-ng-click="deselectAll();"
          tabindex="-1"
          id="deselectAll">
-        <span class="glyphicon glyphicon-remove"></span>
+        <span class="fa fa-square-o fa-fw"></span>
         {{texts.uncheckAll}}
       </a>
     </li>
@@ -100,7 +100,8 @@
           </label>
         </div>
         <span ng-if="!settings.checkBoxes"
-              data-ng-class="{'glyphicon glyphicon-ok': isChecked(option)}">
+              class="fa fa-fw"
+              data-ng-class="{'fa-check-square-o': isChecked(option), 'fa-square-o': !isChecked(option)}}">
         </span>
         <span dm-dropdown-static-include="{{settings.template}}"></span>
       </a>
@@ -126,7 +127,8 @@
           </label>
         </div>
         <span ng-if="!settings.checkBoxes"
-              data-ng-class="{'glyphicon glyphicon-ok': isChecked(option)}">
+              class="fa fa-fw"
+              data-ng-class="{'fa-check-square-o': isChecked(option), 'fa-square-o': !isChecked(option)}}">
         </span>
         <span ng-if="!settings.checkBoxes"
               dm-dropdown-static-include="{{settings.template}}"></span>

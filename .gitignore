@@ -12,8 +12,9 @@ lib-cov
 pids
 logs
 results
-
+.history
 node_modules
+package-lock.json
 
 #Actually, need to track these for site to run on Github Pages..
 /bower_components
