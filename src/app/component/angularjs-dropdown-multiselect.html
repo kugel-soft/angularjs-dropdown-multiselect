@@ -72,8 +72,7 @@
     <li ng-if="settings.enableSearch"
         class="divider">
     </li>
-    <li ng-show="settings.groupBy"
-        ng-repeat-start="option in orderedItems = ( options | filter:getFilter(input.searchFilter) | orderBy:'':false:orderFunction)"
+    <li ng-repeat-start="option in orderedItems = ( options | filter:getFilter(input.searchFilter) | orderBy:'':false:orderFunction)"
         ng-show="getPropertyForObject(option, settings.groupBy) !== getPropertyForObject(orderedItems[$index - 1], settings.groupBy)"
         role="presentation"
         class="dropdown-header">
