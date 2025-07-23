@@ -116,7 +116,7 @@ gulp.task('clean:component', ['conf:component'], function() {
 });
 
 gulp.task('compile:component', ['clean:component'], function(cb) {
-	runSequence(['scripts', 'styles', 'partials'], cb);
+	runSequence(['scripts', 'partials'], cb);
 });
 
 gulp.task('build.component.minified', ['compile:component'], function () {

@@ -180,7 +180,7 @@
 			smartButtonTextConverter: angular.noop,
 			styleActive: false,
 			selectedToTop: false,
-			keyboardControls: false,
+			keyboardControls: true,
 			template: '{{getPropertyForObject(option, settings.displayProp)}}',
 			searchField: '$',
 			showAllSelectedText: false
@@ -405,8 +405,10 @@
 			return undefined;
 		}
 
-		function selectAll() {
-			$scope.deselectAll(true);
+		function selectAll(skipDeselect) {
+			if (!skipDeselect) {
+				$scope.deselectAll(true);
+			}
 			$scope.externalEvents.onSelectAll();
 
 			var searchResult = $filter('filter')($scope.options, $scope.getFilter($scope.input.searchFilter));
@@ -582,7 +584,12 @@
 						$scope.setSelectedItem(searchResult[0], false, true);
 					}
 				} else if ($scope.settings.enableSearch) {
-					$scope.selectAll();
+					if ($scope.input.searchFilter) {
+						$scope.selectAll(true);
+						$scope.input.searchFilter = '';
+					} else {
+						$scope.toggleDropdown();
+					}
 				}
 			}
 		}
