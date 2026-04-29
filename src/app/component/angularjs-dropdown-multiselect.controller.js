@@ -164,10 +164,29 @@ export default function dropdownMultiselectController(
 		}, 0);
 	}
 
+	function isDisabled() {
+		if ($scope.disabled) {
+			return true;
+		}
+		let parent = $element[0].parentElement;
+		while (parent) {
+			if (parent.tagName === 'FIELDSET' && parent.disabled) {
+				return true;
+			}
+			parent = parent.parentElement;
+		}
+		return false;
+	}
+
 	function toggleDropdown() {
 		if ($scope.open) {
 			$scope.close();
-		} else { $scope.open = true; }
+		} else {
+			if (isDisabled()) {
+				return;
+			}
+			$scope.open = true;
+		}
 		if ($scope.settings.keyboardControls) {
 			if ($scope.open) {
 				if ($scope.settings.selectionLimit === 1 && $scope.settings.enableSearch) {

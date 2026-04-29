@@ -268,10 +268,27 @@
 			}, 0);
 		}
 
+		function isDisabled() {
+			if ($scope.disabled) {
+				return true;
+			}
+			var parent = $element[0].parentElement;
+			while (parent) {
+				if (parent.tagName === 'FIELDSET' && parent.disabled) {
+					return true;
+				}
+				parent = parent.parentElement;
+			}
+			return false;
+		}
+
 		function toggleDropdown() {
 			if ($scope.open) {
 				$scope.close();
 			} else {
+				if (isDisabled()) {
+					return;
+				}
 				$scope.open = true;
 			}
 			if ($scope.settings.keyboardControls) {
